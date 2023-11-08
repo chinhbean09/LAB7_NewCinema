@@ -40,7 +40,7 @@ const NewsPage = () => {
                                         <ListItemText
                                             className='ct-n'
                                             primary={news.title}
-                                            secondary={news.shortinfo}
+                                            secondary={news.infomation}
                                         />
                                     </div>
 

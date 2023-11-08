@@ -18,7 +18,10 @@ const UpdateNews = (props) => {
             [name]: value
         });
     };
+console.log(newsData)
+console.log(formData)
 
+console.log(idToUpdate)
     const handleSubmit = async () => {
         try {
             const res = await axios.put(`https://654a0640e182221f8d525970.mockapi.io/films/${idToUpdate}`, formData);
@@ -64,7 +67,7 @@ const UpdateNews = (props) => {
                             <Form.Control
                                 type="text"
                                 placeholder="Title"
-                                name="title"
+                                name="year"
                                 value={formData.year}
                                 onChange={handleInputChange}
                             />
@@ -74,7 +77,7 @@ const UpdateNews = (props) => {
                             <Form.Control
                                 type="text"
                                 placeholder="Info"
-                                name="info"
+                                name="time"
                                 value={formData.time}
                                 onChange={handleInputChange}
                             />
@@ -84,7 +87,7 @@ const UpdateNews = (props) => {
                             <Form.Control
                                 type="text"
                                 placeholder="Short Info"
-                                name="shortinfo"
+                                name="categorie"
                                 value={formData.categorie}
                                 onChange={handleInputChange}
                             />
@@ -115,8 +118,8 @@ const UpdateNews = (props) => {
                             <Form.Control
                                 type="text"
                                 placeholder="information"
-                                name="info"
-                                value={formData.infor}
+                                name="infomation"
+                                value={formData.infomation}
                                 onChange={handleInputChange}
                             />
                         </Form.Group>

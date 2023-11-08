@@ -31,8 +31,6 @@ export default function Filmss() {
     const startIndex = page * perPage;
     const endIndex = startIndex + perPage;
     const currentFilms = Films.filter(f => f.categorie.includes("Action")).slice(startIndex, endIndex);
-
-
     return (
         <>
             <div className='container-films-list'>
@@ -74,8 +72,6 @@ export default function Filmss() {
                                         <p style={{ color: 'grey' }}>
                                             <span> {Filmm.year}  ,  {Filmm.categorie}</span>
                                         </p>
-
-
                                         <a className='name-film' >{Filmm.name}</a>
 
                                     </div>

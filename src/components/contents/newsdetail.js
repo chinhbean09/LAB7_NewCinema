@@ -30,7 +30,7 @@ export default function NewsDetail() {
     }, []);
 
     const newsid = useParams();
-    const News = newsData.find((obj) => obj.id === newsid.id);
+    const News = newsData.find((obj) => obj.id == newsid.id);
 
     if (loading) {
 

@@ -4,7 +4,6 @@ import Table from 'react-bootstrap/Table';
 import Pagination from 'react-bootstrap/Pagination';
 import UpdateNews from './updatefilm';
 import { Button } from '@mui/material';
-// import './tintucStaff.scss'
 import { UseAuth } from '../services/AuthConext';
 import { Navigate } from 'react-router-dom';
 import ModalAddNews from './insertfilm';
@@ -12,8 +11,6 @@ import ModalDelete from './deleteFilm';
 
 const DashboardHome = () => {
     const { user } = UseAuth();
-
-
     const [News, setNews] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
     const itemsPerPage = 8;
@@ -23,7 +20,8 @@ const DashboardHome = () => {
     const [editNewsData, setEditNewsData] = useState({});
     const [idToUpdate, setIdToUpdate] = useState(null);
     const [idToDelete, setIdToDelete] = useState(null);
-
+    console.log(News)
+    console.log()
     const handleCloseAdd = () => setShowAdd(false);
     const handleShowAdd = () => setShowAdd(true);
 
@@ -34,7 +32,7 @@ const DashboardHome = () => {
 
     const handleShowEdit = (data) => {
         setEditNewsData(data);
-        setIdToUpdate(data.id);
+        setIdToUpdate(News.id);
         setShowEdit(true);
     };
     const handleShowDelete = (data) => {
@@ -83,10 +81,13 @@ const DashboardHome = () => {
         return <Navigate to="/login" />;
     }
     return (
+        
         <div style={{ marginTop: '100px' }} className='tintucStaff-container'>
             <Button variant="outlined" color='success' onClick={handleShowAdd} size='large' id='btn-add-staff-dashboard'>
                 Add News
             </Button>
+            <h3>API trên mockapi của em có vấn đề(đôi khi không hoạt động)</h3>
+            <h3>Nếu thầy thực hiện Delete, Update thì phải Add News rồi mới thực hiện được</h3>
             <Table striped bordered hover>
                 <thead>
                     <tr>
